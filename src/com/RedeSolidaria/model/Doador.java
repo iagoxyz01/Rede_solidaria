@@ -18,5 +18,6 @@ public abstract class Doador {
         return nome;
     }
     public String getContato() {
-        return contato;}
+        return contato;
+    }
 }
