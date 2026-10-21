@@ -1,6 +1,6 @@
-package com.RedeSolidaria.model.enums;
+package com.RedeSolidaria.model;
 
-public class Cidadao extends Doador{
+public class Cidadao extends Doador {
     private String cpf;
 
     public Cidadao(int id, String nome, String contato, String cpf) {
@@ -8,7 +8,5 @@ public class Cidadao extends Doador{
         this.cpf = cpf;
     }
 
-    public String getCpf() {
-        return cpf;
-    }
+    public String getCpf() { return cpf; }
 }
