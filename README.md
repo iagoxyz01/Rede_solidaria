@@ -1,7 +1,7 @@
 # Rede Solidária de Apoio a Migrantes e Refugiados
 Projeto acadêmico em Java e MySQL para modelar o recebimento, a organização e a destinação de doações para famílias migrantes e refugiadas.
 
-## Etapa 2
+
 - Modelagem orientada a objetos baseada no diagrama UML.
 - Estrutura inicial das classes e enums Java.
 - Script SQL para criação das tabelas relacionais.
