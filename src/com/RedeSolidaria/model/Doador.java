@@ -1,4 +1,4 @@
-package com.RedeSolidaria.model.enums;
+package com.RedeSolidaria.model;
 
 public abstract class Doador {
     private int id;
@@ -11,13 +11,7 @@ public abstract class Doador {
         this.contato = contato;
     }
 
-    public int getId() {
-        return id;
-    }
-    public String getNome() {
-        return nome;
-    }
-    public String getContato() {
-        return contato;
-    }
+    public int getId() { return id; }
+    public String getNome() { return nome; }
+    public String getContato() { return contato; }
 }
