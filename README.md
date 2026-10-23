@@ -26,6 +26,6 @@ A integração efetiva com MySQL e as regras completas de estoque, reserva e dis
 <img width="794" height="812" alt="IMG-20261015-WA0049" src="https://github.com/user-attachments/assets/75032943-a9c0-4b64-abcb-ebca6015593b" />
 
 
-##Projeto
+## Projeto
 <img width="1280" height="720" alt="slide_gestao_doacoes_ong" src="https://github.com/user-attachments/assets/2f84ab75-374a-4f5c-b2e3-11620145f44b" />
 
