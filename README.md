@@ -20,3 +20,7 @@ Projeto acadêmico em Java e MySQL para modelar o recebimento, a organização e
 - `docs/arquitetura.md`: arquitetura.
 
 A integração efetiva com MySQL e as regras completas de estoque, reserva e distribuição serão desenvolvidas nas próximas etapas.
+
+## Diagrama
+
+<img width="794" height="812" alt="IMG-20261015-WA0049" src="https://github.com/user-attachments/assets/75032943-a9c0-4b64-abcb-ebca6015593b" />
