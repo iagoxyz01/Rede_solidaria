@@ -29,3 +29,6 @@ A integração efetiva com MySQL e as regras completas de estoque, reserva e dis
 ## Projeto
 <img width="1280" height="720" alt="slide_gestao_doacoes_ong" src="https://github.com/user-attachments/assets/2f84ab75-374a-4f5c-b2e3-11620145f44b" />
 
+[Acessar o Protótipo da Rede Solidária](https://iagoxyz01.github.io/Prototipo/)
+
+
