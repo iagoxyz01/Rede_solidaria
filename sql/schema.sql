@@ -23,8 +23,12 @@ CREATE TABLE estoque (
 );
 CREATE TABLE doacao (
  id INT AUTO_INCREMENT PRIMARY KEY, doador_id INT NOT NULL, produto_id INT NOT NULL,
+ tipo ENUM('ALIMENTO','ROUPA','HIGIENE') NOT NULL,
  quantidade_recebida INT NOT NULL, validade DATE, data_cadastro DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
  estado_aptidao ENUM('APTA','BLOQUEADA','IMPROPRIA') NOT NULL DEFAULT 'APTA',
+ pronto_consumo BOOLEAN,     
+ lacrado BOOLEAN,            
+ estacao VARCHAR(20),        
  FOREIGN KEY (doador_id) REFERENCES doador(id), FOREIGN KEY (produto_id) REFERENCES produto(id),
  CHECK (quantidade_recebida > 0)
 );
