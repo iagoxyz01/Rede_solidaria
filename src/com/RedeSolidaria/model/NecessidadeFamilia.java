@@ -49,4 +49,33 @@ public class NecessidadeFamilia {
     public StatusNecessidade getStatus() {
         return status;
     }
+
+    public int calcularQuantidadePendente() {
+        return quantidadeNecessaria - quantidadeAtendida;
+    }
+
+    public void registrarAtendimento(int quantidade){
+        if (quantidade <= 0) {
+            throw new IllegalArgumentException(
+                "A quantidade deve ser maior que zero"
+            );
+        }
+        if (quantidade > calcularQuantidadePendente()){
+            throw new IllegalArgumentException(
+                "A quantiadde informada excede o necessário"
+            );
+        }
+        
+        quantidadeAtendida += quantidade;
+
+        if (calcularQuantidadePendente() == 0){
+            status = StatusNecessidade.CONCLUIDA;
+        }
+
+    }
+    public void encerrar() {
+        status = StatusNecessidade.ENCERRADA;
+    }
+
 }
+
