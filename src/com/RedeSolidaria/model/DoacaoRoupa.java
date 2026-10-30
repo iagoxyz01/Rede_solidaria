@@ -1,10 +1,11 @@
 package com.RedeSolidaria.model;
 
 public class DoacaoRoupa extends Doacao {
+
     private String estacao;
 
-    public DoacaoRoupa(int id, String descricao, String estacao) {
-        super(id, descricao);
+    public DoacaoRoupa(int id, Doador doador, Produto produto, int quantidade, String estacao) {
+        super(id, doador, produto, quantidade, null); // roupa não tem validade
         this.estacao = estacao;
     }
 
