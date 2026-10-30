@@ -2,6 +2,7 @@ package com.RedeSolidaria.model;
 import java.time.LocalDate;
 
 public class DoacaoRoupa extends Doacao {
+
     private String estacao;
 
     public DoacaoRoupa(  
