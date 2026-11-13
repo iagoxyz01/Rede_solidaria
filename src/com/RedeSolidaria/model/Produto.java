@@ -3,11 +3,11 @@ package com.RedeSolidaria.model;
 import com.RedeSolidaria.model.enums.CategoriaProduto;
 
 public class Produto {
-    private int id;
-    private String nome;
-    private CategoriaProduto categoria;
-    private String variacao;
-    private boolean ativo;
+    private final int id;
+    private final String nome;
+    private final CategoriaProduto categoria;
+    private final String variacao;
+    private final boolean ativo;
 
     public Produto(int id, String nome, CategoriaProduto categoria, String variacao) {
         this.id = id;

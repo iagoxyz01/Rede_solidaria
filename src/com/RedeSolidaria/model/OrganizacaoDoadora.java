@@ -1,8 +1,8 @@
 package com.RedeSolidaria.model;
 
 public class OrganizacaoDoadora extends Doador {
-    private String nomeInstituicao;
-    private String cnpj;
+    private final String nomeInstituicao;
+    private final String cnpj;
 
     public OrganizacaoDoadora(int id, String nome, String contato, String nomeInstituicao, String cnpj) {
         super(id, nome, contato);

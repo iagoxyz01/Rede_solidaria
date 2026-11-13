@@ -1,7 +1,7 @@
 package com.RedeSolidaria.model;
 
 public class Cidadao extends Doador {
-    private String cpf;
+    private final String cpf;
 
     public Cidadao(int id, String nome, String contato, String cpf) {
         super(id, nome, contato);
