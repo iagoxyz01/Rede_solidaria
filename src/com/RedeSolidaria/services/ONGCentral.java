@@ -10,7 +10,8 @@ import com.RedeSolidaria.model.enums.StatusNecessidade;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-/** Serviço inicial; regras completas serão implementadas em etapas futuras. */
+
+
 public class ONGCentral {
     private final List<FamiliaAcolhida> familias = new ArrayList<>();
     private final List<Doacao> doacoes = new ArrayList<>();
@@ -135,6 +136,5 @@ public Destinacao realizarReserva(
 
     
     public void confirmarEntrega() {
-        /* Etapa futura. */
     }
 }

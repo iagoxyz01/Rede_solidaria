@@ -78,8 +78,6 @@ public class Main {
         }
     }
 
-    // ---------- Métodos auxiliares de leitura ----------
-
     private static String lerTexto(String mensagem) {
         String texto;
         do {
