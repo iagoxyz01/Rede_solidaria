@@ -77,5 +77,14 @@ public class NecessidadeFamilia {
         status = StatusNecessidade.ENCERRADA;
     }
 
+    public void cancelarAtendimento(int quantidade) {
+    if (quantidade <= 0 || quantidade > quantidadeAtendida) {
+        throw new IllegalArgumentException("Quantidade inválida para cancelamento");
+    }
+
+    quantidadeAtendida -= quantidade;
+    status = StatusNecessidade.ABERTA;
+}
+
 }
 

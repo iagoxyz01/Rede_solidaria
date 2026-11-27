@@ -1,6 +1,7 @@
+
 package com.RedeSolidaria.model;
 
-import com.RedeSolidaria.model.enums.EstadoAptidao;
+import com.RedeSolidaria.model.enums.ResultadoInspecao;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -12,7 +13,7 @@ public abstract class Doacao {
     private int quantidadeRecebida;
     private LocalDate validade;
     private LocalDateTime dataCadastro;
-    private EstadoAptidao estadoAptidao;
+    private ResultadoInspecao estadoAptidao;
 
     public Doacao(
             int id,
@@ -27,7 +28,7 @@ public abstract class Doacao {
         this.quantidadeRecebida = quantidadeRecebida;
         this.validade = validade;
         this.dataCadastro = LocalDateTime.now();
-        this.estadoAptidao = EstadoAptidao.APTA;
+        this.estadoAptidao = ResultadoInspecao.BLOQUEADA;
     }
 
     public abstract int calcularPrioridade();
@@ -56,11 +57,19 @@ public abstract class Doacao {
         return dataCadastro;
     }
 
-    public EstadoAptidao getEstadoAptidao() {
+    public ResultadoInspecao getEstadoAptidao() {
         return estadoAptidao;
     }
 
     public boolean verificarAptidao() {
-        return estadoAptidao == EstadoAptidao.APTA;
+        return estadoAptidao == ResultadoInspecao.APTA;
     }
+
+public void atualizarAptidao(ResultadoInspecao resultado) {
+    if (resultado == null) {
+        throw new IllegalArgumentException("O resultado da inspeção é obrigatório");
+    }
+
+    this.estadoAptidao = resultado;
+}
 }

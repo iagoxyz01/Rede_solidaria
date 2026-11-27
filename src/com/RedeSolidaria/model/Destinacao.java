@@ -1,3 +1,4 @@
+
 package com.RedeSolidaria.model;
 
 import com.RedeSolidaria.model.enums.StatusDestinacao;
@@ -15,11 +16,12 @@ public class Destinacao {
     private String motivoCancelamento;
     private StatusDestinacao status;
 
-    public Destinacao(
-            int id,
-            NecessidadeFamilia necessidade,
-            Doacao doacao,
-            int quantidade) {
+    public Destinacao(int id, NecessidadeFamilia necessidade,
+            Doacao doacao, int quantidade) {
+
+        if (necessidade == null || doacao == null || quantidade <= 0) {
+            throw new IllegalArgumentException("Dados inválidos para a destinação");
+        }
 
         this.id = id;
         this.necessidade = necessidade;
@@ -29,39 +31,36 @@ public class Destinacao {
         this.status = StatusDestinacao.RESERVADA;
     }
 
-    public int getId() {
-        return id;
+    public void concluir() {
+        if (status != StatusDestinacao.RESERVADA) {
+            throw new IllegalStateException("A destinação não está reservada");
+        }
+
+        this.status = StatusDestinacao.CONCLUIDA;
+        this.dataConclusao = LocalDateTime.now();
     }
 
-    public NecessidadeFamilia getNecessidade() {
-        return necessidade;
+    public void cancelar(String motivo) {
+        if (status != StatusDestinacao.RESERVADA) {
+            throw new IllegalStateException("A destinação não está reservada");
+        }
+
+        if (motivo == null || motivo.trim().isEmpty()) {
+            throw new IllegalArgumentException("Informe o motivo do cancelamento");
+        }
+
+        this.status = StatusDestinacao.CANCELADA;
+        this.dataCancelamento = LocalDateTime.now();
+        this.motivoCancelamento = motivo;
     }
 
-    public Doacao getDoacao() {
-        return doacao;
-    }
-
-    public int getQuantidade() {
-        return quantidade;
-    }
-
-    public LocalDateTime getDataReserva() {
-        return dataReserva;
-    }
-
-    public LocalDateTime getDataConclusao() {
-        return dataConclusao;
-    }
-
-    public LocalDateTime getDataCancelamento() {
-        return dataCancelamento;
-    }
-
-    public String getMotivoCancelamento() {
-        return motivoCancelamento;
-    }
-
-    public StatusDestinacao getStatus() {
-        return status;
-    }
+    public int getId() { return id; }
+    public NecessidadeFamilia getNecessidade() { return necessidade; }
+    public Doacao getDoacao() { return doacao; }
+    public int getQuantidade() { return quantidade; }
+    public LocalDateTime getDataReserva() { return dataReserva; }
+    public LocalDateTime getDataConclusao() { return dataConclusao; }
+    public LocalDateTime getDataCancelamento() { return dataCancelamento; }
+    public String getMotivoCancelamento() { return motivoCancelamento; }
+    public StatusDestinacao getStatus() { return status; }
 }

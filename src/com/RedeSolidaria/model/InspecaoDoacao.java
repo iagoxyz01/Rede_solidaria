@@ -18,11 +18,19 @@ public class InspecaoDoacao {
             ResultadoInspecao resultado,
             String motivo) {
 
+        if (doacao == null || resultado == null) {
+            throw new IllegalArgumentException(
+                "A doação e o resultado são obrigatórios"
+            );
+        }
+
         this.id = id;
         this.doacao = doacao;
         this.dataInspecao = LocalDateTime.now();
         this.resultado = resultado;
         this.motivo = motivo;
+
+        this.doacao.atualizarAptidao(resultado);
     }
 
     public int getId() {
@@ -43,5 +51,9 @@ public class InspecaoDoacao {
 
     public String getMotivo() {
         return motivo;
+    }
+
+    public boolean foiAprovada() {
+        return resultado == ResultadoInspecao.APTA;
     }
 }
